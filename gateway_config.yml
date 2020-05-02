@@ -1,0 +1,14 @@
+# Acest fișier este folosit pentru a trimite informații despre gateway si link-ul către aplicație
+
+identity:
+    orgId: 0vj1n7
+    typeId: LegionY520
+    deviceId: LegionY520-TB
+auth:
+    token: au*NK_a3FzSdLlf2nA
+options:
+    domain: internetofthings.ibmcloud.com
+    logLevel: debug
+    mqtt:
+        port: 8883
+        transport: tcp
