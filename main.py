@@ -19,6 +19,7 @@ def send_gateway_status():
     send_status_event(client)
 
 
+# Trimitere eveniment la intervalul de bază
 @tl.job(interval=timedelta(milliseconds=200))
 def send_device_readings():
     for device_addr, data in devices_data.items():
@@ -26,6 +27,7 @@ def send_device_readings():
     devices_data.clear()
 
 
+# Dacă se trimit comenzi, această funcție le va rula
 def gateway_command_callback(cmd):
     print("Command received for {}:{}: {}".format(cmd.typeId, cmd.deviceId, cmd.data))
     if cmd.typeId == 'reset':
@@ -34,17 +36,17 @@ def gateway_command_callback(cmd):
         print("Unknown command type received")
 
 
+# Funcție căreia i se poate adăuga logică customizată
 def reset_data():
     devices_data.clear()
-    # Add more custom logic here.
     pass
 
 
 tl.start()
 
-# Subscribing to commands
+# Subscripție la comenzi
 client.subscribeToCommands(commandId="reset")
-# Registering a callback
+# Înregistrarea unei chemări
 client.commandCallback = gateway_command_callback
 
 
