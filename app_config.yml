@@ -1,0 +1,9 @@
+# app_config.yml
+identity:
+    appId: 197
+auth:
+    key: a-0vj1n7-ccmm7xynye
+    token: p&00AhFkHNPxqFbOKA
+options:
+    domain: internetofthings.ibmcloud.com
+    logLevel: debug
