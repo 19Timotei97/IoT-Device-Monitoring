@@ -1,25 +1,26 @@
 import wiotp.sdk.application
+from gateway_client import get_gateway_cilent
 
 
 # Credențiale folosite pentru IBM Cloudant
 CLOUDANT_CREDS = {
-  "apikey": "your_api_key_here",
-  "host": "eeca8e52-1774-4698-93d1-cafa434762ac-bluemix.cloudantnosqldb.appdomain.cloud",
-  "password": "your_pwd_here",
+  "apikey": "AG4Y2YGsjGVRlHgcPdFjoAqSUBKr5SBevjfdS6yLSza4",
+  "host": "06ef9091-300d-403a-9c18-9e496fa09e25-bluemix.cloudantnosqldb.appdomain.cloud",
+  "password": "4fee4d79fd6666422bad2fbb4ccdecb42b6aee42ae72c0548331e36f14bddee7",
   "port": 443,
-  "username": "your_username_here"
+  "username": "06ef9091-300d-403a-9c18-9e496fa09e25-bluemix"
 }
 
 # Legarea serviciilor
 SERVICE_BINDING = {
-    "name": "any-binding-name",
+    "name": "Timotei_IoT_DM",
     "description": "Test Cloudant Binding",
     "type": "cloudant",
     "credentials": CLOUDANT_CREDS
 }
 
-ANDROID_DEVICE_TYPE = "Android"
-GATEWAY_DEVICE_TYPE = "raspi"
+ANDROID_DEVICE_TYPE = "OnePlus7Pro"
+GATEWAY_DEVICE_TYPE = "LegionY520"
 STATUS_EVENT_TYPE = "status"
 
 
@@ -30,7 +31,7 @@ def get_application_client(config_file_path):
 
 
 def create_cloudant_connections(client, service_binding):
-    # Legarea aplicației la IBM Cloudant (din păcate, a suferit schimbări majore)
+    # Legarea aplicației la IBM Cloudant (din păcate, această funcționalitate încă nu merge corect)
     cloudant_service = client.serviceBindings.create(service_binding)
 
     # Crearea conetorului
@@ -66,3 +67,5 @@ def send_reset_command(client, type, id):
 app_client = get_gateway_cilent("app_config.yml")
 app_client.connect()
 
+
+create_cloudant_connections(app_client, SERVICE_BINDING)
