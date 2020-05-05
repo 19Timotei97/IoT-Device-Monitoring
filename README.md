@@ -8,3 +8,4 @@ To run the application, the following steps are required:
 4. Go to https://0vj1n7.internetofthings.ibmcloud.com/dashboard/boards/a39e5d96-4589-4a9c-82bb-167747197986 to see the data sent (you should use your IBM Cloud account to create your own dashboard or go to https://dataplatform.cloud.ibm.com/dashboards/ce799329-574a-4c98-bb12-fc71f6eeb881/view/5c29e61b25ae3dd647cec8e4079825557f662059b4bb825680d77b490a642297f06817c4c82f4f5d8e135030f5eb125dc0 to see a part of the data)
 
 This project was created based on the tutorial found at https://developer.ibm.com/tutorials/iot-lp201-build-door-monitoring-system/, created by IBM. Also, the code was used from the repository found at https://github.com/satwikkansal/ibm_iot_example.
+Steps on how to create the IBM Watson Studio Dashboard can be found at https://developer.ibm.com/tutorials/create-interactive-dashboards-on-watson-studio/.
